@@ -1,52 +1,3 @@
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 c1=0
 c2=0
 c3=0
@@ -56,8 +7,55 @@ c6=0
 c7=0
 c8=0
 c9=0
-XS=0
-OS=0
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 def victory():
     if c1==1 and c2==1 and c3==1:
@@ -98,6 +96,7 @@ def victory():
     else:
         print("manche suivante")
 
-if c1 != 0 and c2 !=0 and c3 !=0 and c4 !=0 and c5 !=0 and c6 !=0 and c7 !=0 and c8 !=0 and c9 !=0:
-    print
+    if c1 != 0 and c2 !=0 and c3 !=0 and c4 !=0 and c5 !=0 and c6 !=0 and c7 !=0 and c8 !=0 and c9 !=0:
+        print("fin de partie, égalité")
+        
     

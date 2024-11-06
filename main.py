@@ -173,13 +173,13 @@ def victory():                                           #Victory c'est toutes l
     
 
 
-def game(player1 = turn_x(),player2=turn_o()):
-    while victory(False):
-        player1
-        case()
-        player1
-        case()
-print(game())
+#def game(player1 = turn_x(),player2=turn_o()):
+#    while victory(False):
+#        player1
+#        case()
+#        player1
+#        case()
+#print(game())
 
 
         

@@ -1,6 +1,6 @@
-c1=0                                                #chaques cases à une variable 
-c2=0
-c3=0
+c1="X"                                               #chaques cases à une variable 
+c2="X"
+c3="X"
 c4=0
 c5=0
 c6=0
@@ -134,41 +134,22 @@ case()
 
 
 
-def victory():
-    if c1=="O" and c2=="O" and c3=="O":
+def victory():                                           #Victory c'est toutes les possibilités de victoires plus l'égalité
+    if c1=="O" and c2=="O" and c3=="O" or c1=="X" and c2=="X" and c3=="X":
+        return True     
+    elif c4=="O" and c5=="O" and c6=="O" or c4=="X" and c5=="X" and c6=="X":
         return True
-    elif c4=="O" and c5=="O" and c6=="O":
+    elif c7=="O" and c8=="O" and c9=="O" or c7=="X" and c8=="X" and c9=="X":
         return True
-    elif c7=="O" and c8=="O" and c9=="O":
+    elif c1=="O" and c4=="O" and c7=="O" or c1=="X" and c4=="X" and c7=="X":
         return True
-    elif c1=="O" and c4=="O" and c7=="O":
+    elif c2==1 and c5==1 and c8=="O" or c2=="X" and c5=="X" and c8=="X":
         return True
-    elif c2==1 and c5==1 and c8=="O":
+    elif c3=="O" and c6=="O" and c9=="O" or c3=="X" and c6=="X" and c9=="X":
         return True
-    elif c3=="O" and c6=="O" and c9=="O":
+    elif c1=="O" and c5=="O" and c9=="O" or c1=="X" and c5=="X" and c9=="X":
         return True
-    elif c1=="O" and c5=="O" and c9=="O":
-        return True
-    elif c3=="O" and c5=="O" and c7=="O":
-        return True
-    else:
-        print("manche suivante")
-        
-    if c1=="X" and c2=="X" and c3=="X":
-        return True
-    elif c4=="X" and c5=="X" and c6=="X":
-        return True
-    elif c7=="X" and c8=="X" and c9=="X":
-        return True
-    elif c1=="X" and c4=="X" and c7=="X":
-        return True
-    elif c2=="X" and c5=="X" and c8=="X":
-        return True
-    elif c3=="X" and c6=="X" and c9=="X":
-        return True
-    elif c1=="X" and c5=="X" and c9=="X":
-        return True
-    elif c3=="X" and c5=="X" and c7=="X":
+    elif c3=="O" and c5=="O" and c7=="O" or c3=="X" and c5=="X" and c7=="X":
         return True
     elif c1 != 0 and c2 !=0 and c3 !=0 and c4 !=0 and c5 !=0 and c6 !=0 and c7 !=0 and c8 !=0 and c9 !=0:
         print("fin de partie, égalité")
@@ -176,6 +157,9 @@ def victory():
     else:
         print("manche suivante")
         return False
+    
+victory()
+
 
 
         

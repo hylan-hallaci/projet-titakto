@@ -1,13 +1,13 @@
-c1=0
+c1=0                                                #chaques cases à une variable 
 c2=0
 c3=0
 c4=0
 c5=0
 c6=0
-c7=0
+c7="X"
 c8=0
 c9=0
-def play():
+def play():                                            #Le menu principal du jeu
     player=input("Solo ou deux joueurs")
     if player==1:
         return
@@ -31,51 +31,51 @@ def play():
 def turn_o():                                           #change la variable d'une case par la valeur 1 pour les O et a valeur 2 pour les X.
     CA=input("quelle case voulez vous jouer ?")
     if CA == 1 and c1 ==0:
-        c1= 1
+        c1= "O"
     elif CA == 2 and c2==0:
-        c2= 1
+        c2= "O"
     elif CA== 3 and c3 == 0:
-        c3=1
+        c3= "O"
     elif CA== 4 and c4 ==0:
-        c4=1
+        c4= "O"
     elif CA==5 and c5==0:
-        c5=1
+        c5= "O"
     elif CA==6 and c6==0:
-        c6=1
+        c6= "O"
     elif CA==7 and c7==0:
-        c7=1
+        c7= "O"
     elif CA==8 and c8==0:
-        c8=1
+        c8="O"
     elif CA==9 and c9==0:
-        c9=1
+        c9="O"
     else:
         print("choisissez une case vide svp")
         turn_o()
 def turn_x():                                             #pour eviter des erreurs, répétition, KISS
     CA=input("quelle case voulez vous jouer ?")
     if CA == 1 and c1 ==0:
-        c1= 2
+        c1= "X"
     elif CA == 2 and c2==0:
-        c2= 2
+        c2= "X"
     elif CA== 3 and c3 == 0:
-        c3=2
+        c3="X"
     elif CA== 4 and c4 ==0:
-        c4=2
+        c4="X"
     elif CA==5 and c5==0:
-        c5=2
+        c5="X"
     elif CA==6 and c6==0:
-        c6=2
+        c6="X"
     elif CA==7 and c7==0:
-        c7=2
+        c7="X"
     elif CA==8 and c8==0:
-        c8=2
+        c8="X"
     elif CA==9 and c9==0:
-        c9=2
+        c9="X"
     else:
         print("choisissez une case vide svp")
         turn_x()
  
-def case():
+def case():                                               #grille avec support des variables dans le terminal
     long = 1
     larg = 1
     n=0

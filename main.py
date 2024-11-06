@@ -1,12 +1,32 @@
-c1=1
-c2=2
-c3=3
-c4=4
-c5=5
-c6=6
-c7=7
-c8=8
-c9=9
+c1=0
+c2=0
+c3=0
+c4=0
+c5=0
+c6=0
+c7=0
+c8=0
+c9=0
+def play():
+    player=input("Solo ou deux joueurs")
+    if player==1:
+        return
+    if player==2:
+        return
+    else:
+        print("1 ou 2 joueurs svp")
+        play()
+
+
+
+
+
+
+
+
+
+
+
 
 def turn_o():                                           #change la variable d'une case par la valeur 1 pour les O et a valeur 2 pour les X.
     CA=input("quelle case voulez vous jouer ?")

@@ -15,9 +15,44 @@ def jouer(joueur,grille):
 
 
 
+
+player1=turn_x
+player2=turn_o
+def play(player1,player2):
+    tour1=turn_x()
+    tour2=turn_o()
+    while victory() : False
+    turn_x()
+    turn_o()
+
+print(play())
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 import tkinter
 
 root = tkinter.Tk()
+
+
 
 def draw_grid():
     button = tkinter.Button(root,height=5,width=20)

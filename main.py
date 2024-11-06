@@ -33,3 +33,17 @@ root.minsize(500,393)
 
 grille()
 root.mainloop()
+
+
+#fonction qui permet de switch entre les joueur 
+
+play()
+while True:  
+    case()   
+    turn_o() 
+    if victory(): 
+        break
+    case()   
+    turn_x() 
+    if victory():  
+        break

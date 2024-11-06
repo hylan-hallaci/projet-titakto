@@ -1,22 +1,43 @@
-c1="X"                                               #chaques cases à une variable 
-c2="X"
-c3="X"
+c1=0                                              #chaques cases à une variable 
+c2=0
+c3=0
 c4=0
 c5=0
 c6=0
 c7=0
 c8=0
 c9=0
+
+def flow():
+    
+    while True :  
+        case()   
+        turn_o() 
+        if victory(True): 
+            break
+        case()   
+        turn_x() 
+        if victory(True):  
+            break
+
+
+
+
+
+
+
+
+
+
 def play():                                            #Le menu principal du jeu
     player=input("Solo ou deux joueurs")
-    if player==1:
-        return
-    if player==2:
-        return
+    if player=="1":
+        flow()
+    if player=="2":
+        flow()
     else:
         print("1 ou 2 joueurs svp")
         play()
-
 
 
 
@@ -92,7 +113,7 @@ def case():                                               #grille avec support d
 
     print("+" + ("-" * long + "+")*4)
         
-case()
+
 
 
 
@@ -158,7 +179,9 @@ def victory():                                           #Victory c'est toutes l
         print("manche suivante")
         return False
     
-victory()
+play()
+
+
 
 
 

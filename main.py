@@ -4,7 +4,7 @@ c3=0
 c4=0
 c5=0
 c6=0
-c7="X"
+c7=0
 c8=0
 c9=0
 def play():                                            #Le menu principal du jeu
@@ -135,45 +135,49 @@ case()
 
 
 def victory():
-    if c1==1 and c2==1 and c3==1:
-        return 
-    elif c4==1 and c5==1 and c6==1:
-        return
-    elif c7==1 and c8==1 and c9==1:
-        return
-    elif c1==1 and c4==1 and c7==1:
-        return
-    elif c2==1 and c5==1 and c8==1:
-        return
-    elif c3==1 and c6==1 and c9==1:
-        return
-    elif c1==1 and c5==1 and c9==1:
-        return
-    elif c3==1 and c5==1 and c7==1:
-        return
+    if c1=="O" and c2=="O" and c3=="O":
+        return True
+    elif c4=="O" and c5=="O" and c6=="O":
+        return True
+    elif c7=="O" and c8=="O" and c9=="O":
+        return True
+    elif c1=="O" and c4=="O" and c7=="O":
+        return True
+    elif c2==1 and c5==1 and c8=="O":
+        return True
+    elif c3=="O" and c6=="O" and c9=="O":
+        return True
+    elif c1=="O" and c5=="O" and c9=="O":
+        return True
+    elif c3=="O" and c5=="O" and c7=="O":
+        return True
     else:
         print("manche suivante")
         
-    if c1==2 and c2==2 and c3==2:
-        return 
-    elif c4==2 and c5==2 and c6==2:
-        return
-    elif c7==2 and c8==2 and c9==2:
-        return
-    elif c1==2 and c4==2 and c7==2:
-        return
-    elif c2==2 and c5==2 and c8==2:
-        return
-    elif c3==2 and c6==2 and c9==2:
-        return
-    elif c1==2 and c5==2 and c9==2:
-        return
-    elif c3==2 and c5==2 and c7==2:
-        return
+    if c1=="X" and c2=="X" and c3=="X":
+        return True
+    elif c4=="X" and c5=="X" and c6=="X":
+        return True
+    elif c7=="X" and c8=="X" and c9=="X":
+        return True
+    elif c1=="X" and c4=="X" and c7=="X":
+        return True
+    elif c2=="X" and c5=="X" and c8=="X":
+        return True
+    elif c3=="X" and c6=="X" and c9=="X":
+        return True
+    elif c1=="X" and c5=="X" and c9=="X":
+        return True
+    elif c3=="X" and c5=="X" and c7=="X":
+        return True
+    elif c1 != 0 and c2 !=0 and c3 !=0 and c4 !=0 and c5 !=0 and c6 !=0 and c7 !=0 and c8 !=0 and c9 !=0:
+        print("fin de partie, égalité")
+        return True
     else:
         print("manche suivante")
+        return False
 
-    if c1 != 0 and c2 !=0 and c3 !=0 and c4 !=0 and c5 !=0 and c6 !=0 and c7 !=0 and c8 !=0 and c9 !=0:
-        print("fin de partie, égalité")
+
+        
         
     

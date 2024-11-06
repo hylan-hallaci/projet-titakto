@@ -1,102 +1,66 @@
-c1=0                                              #chaques cases à une variable 
-c2=0
-c3=0
-c4=0
-c5=0
-c6=0
-c7=0
-c8=0
-c9=0
-
-def flow():
-    
-    while True :  
-        case()   
-        turn_o() 
-        if victory(True): 
-            break
-        case()   
-        turn_x() 
-        if victory(True):  
-            break
 
 
-
-
-
-
-
-
-
-
-def play():                                            #Le menu principal du jeu
-    player=input("Solo ou deux joueurs")
-    if player=="1":
-        flow()
-    if player=="2":
-        flow()
-    else:
-        print("1 ou 2 joueurs svp")
-        play()
-
-
-
-
-
-
-
-
-
-
+c1=" "                                              #chaques cases à une variable 
+c2=" "
+c3=" "
+c4=" "
+c5=" "
+c6=" "
+c7=" "
+c8=" "
+c9=" "
 
 def turn_o():                                           #change la variable d'une case par la valeur 1 pour les O et a valeur 2 pour les X.
-    CA=input("quelle case voulez vous jouer ?")
-    if CA == 1 and c1 ==0:
+    global c1, c2, c3, c4, c5, c6, c7, c8, c9
+    CA=int(input("quelle case voulez vous jouer ?"))
+    if CA == 1 and c1 ==" ":
         c1= "O"
-    elif CA == 2 and c2==0:
+    elif CA == 2 and c2==" ":
         c2= "O"
-    elif CA== 3 and c3 == 0:
+    elif CA== 3 and c3 == " ":
         c3= "O"
-    elif CA== 4 and c4 ==0:
+    elif CA== 4 and c4 ==" ":
         c4= "O"
-    elif CA==5 and c5==0:
+    elif CA==5 and c5==" ":
         c5= "O"
-    elif CA==6 and c6==0:
+    elif CA==6 and c6==" ":
         c6= "O"
-    elif CA==7 and c7==0:
+    elif CA==7 and c7==" ":
         c7= "O"
-    elif CA==8 and c8==0:
+    elif CA==8 and c8==" ":
         c8="O"
-    elif CA==9 and c9==0:
+    elif CA==9 and c9==" ":
         c9="O"
     else:
         print("choisissez une case vide svp")
         turn_o()
 def turn_x():                                             #pour eviter des erreurs, répétition, KISS
-    CA=input("quelle case voulez vous jouer ?")
-    if CA == 1 and c1 ==0:
+    global c1, c2, c3, c4, c5, c6, c7, c8, c9
+    CA=int(input("quelle case voulez vous jouer ?"))
+    if CA == 1 and c1 ==" ":
         c1= "X"
-    elif CA == 2 and c2==0:
+    elif CA == 2 and c2==" ":
         c2= "X"
-    elif CA== 3 and c3 == 0:
+    elif CA== 3 and c3 == " ":
         c3="X"
-    elif CA== 4 and c4 ==0:
+    elif CA== 4 and c4 ==" ":
         c4="X"
-    elif CA==5 and c5==0:
+    elif CA==5 and c5==" ":
         c5="X"
-    elif CA==6 and c6==0:
+    elif CA==6 and c6==" ":
         c6="X"
-    elif CA==7 and c7==0:
+    elif CA==7 and c7==" ":
         c7="X"
-    elif CA==8 and c8==0:
+    elif CA==8 and c8==" ":
         c8="X"
-    elif CA==9 and c9==0:
+    elif CA==9 and c9==" ":
         c9="X"
     else:
         print("choisissez une case vide svp")
         turn_x()
  
 def case():                                               #grille avec support des variables dans le terminal
+    global c1, c2, c3, c4, c5, c6, c7, c8, c9
     long = 1
     larg = 1
     n=0
@@ -115,72 +79,63 @@ def case():                                               #grille avec support d
         
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-def victory():                                           #Victory c'est toutes les possibilités de victoires plus l'égalité
-    if c1=="O" and c2=="O" and c3=="O" or c1=="X" and c2=="X" and c3=="X":
-        return True     
-    elif c4=="O" and c5=="O" and c6=="O" or c4=="X" and c5=="X" and c6=="X":
-        return True
-    elif c7=="O" and c8=="O" and c9=="O" or c7=="X" and c8=="X" and c9=="X":
-        return True
-    elif c1=="O" and c4=="O" and c7=="O" or c1=="X" and c4=="X" and c7=="X":
-        return True
-    elif c2=="O" and c5=="O" and c8=="O" or c2=="X" and c5=="X" and c8=="X":
-        return True
-    elif c3=="O" and c6=="O" and c9=="O" or c3=="X" and c6=="X" and c9=="X":
-        return True
-    elif c1=="O" and c5=="O" and c9=="O" or c1=="X" and c5=="X" and c9=="X":
-        return True
-    elif c3=="O" and c5=="O" and c7=="O" or c3=="X" and c5=="X" and c7=="X":
-        return True
-    elif c1 != 0 and c2 !=0 and c3 !=0 and c4 !=0 and c5 !=0 and c6 !=0 and c7 !=0 and c8 !=0 and c9 !=0:
-        print("fin de partie, égalité")
-        return True
-    else:
-        print("manche suivante")
+def victory():
+    global c1, c2, c3, c4, c5, c6, c7, c8, c9
+    # Check rows
+    if (c1 == "O" and c2 == "O" and c3 == "O") or (c1 == "X" and c2 == "X" and c3 == "X"):
+        return False
+    if (c4 == "O" and c5 == "O" and c6 == "O") or (c4 == "X" and c5 == "X" and c6 == "X"):
+        return False
+    if (c7 == "O" and c8 == "O" and c9 == "O") or (c7 == "X" and c8 == "X" and c9 == "X"):
         return False
     
-play()
+    # Check columns
+    if (c1 == "O" and c4 == "O" and c7 == "O") or (c1 == "X" and c4 == "X" and c7 == "X"):
+        return False
+    if (c2 == "O" and c5 == "O" and c8 == "O") or (c2 == "X" and c5 == "X" and c8 == "X"):
+        return False
+    if (c3 == "O" and c6 == "O" and c9 == "O") or (c3 == "X" and c6 == "X" and c9 == "X"):
+        return False
+    
+    # Check diagonals
+    if (c1 == "O" and c5 == "O" and c9 == "O") or (c1 == "X" and c5 == "X" and c9 == "X"):
+        return False
+    if (c3 == "O" and c5 == "O" and c7 == "O") or (c3 == "X" and c5 == "X" and c7 == "X"):
+        return False
+    
+    # Check if all cells are filled
+    if c1 != " " and c2 != " " and c3 != " " and c4 != " " and c5 != " " and c6 != " " and c7 != " " and c8 != " " and c9 != " ":
+        print("fin de partie, égalité")
+        return False
+    else:
+        print("manche suivante")
+        return True
 
+def flow():
+    while victory() is True:
+        case()
+        turn_o()
+        victory()
+        case()
+        turn_x()
+        victory()
+        
+        
+
+
+
+
+
+def play():                                            #Le menu principal du jeu
+    player=int(input("Solo ou deux joueurs"))
+    if player==1:
+        flow()        
+    elif player==2:
+        flow()
+    else:
+        print("1 ou 2 joueurs svp")
+        play()
+play()
 
 
 

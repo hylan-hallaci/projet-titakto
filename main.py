@@ -143,7 +143,7 @@ def victory():                                           #Victory c'est toutes l
         return True
     elif c1=="O" and c4=="O" and c7=="O" or c1=="X" and c4=="X" and c7=="X":
         return True
-    elif c2==1 and c5==1 and c8=="O" or c2=="X" and c5=="X" and c8=="X":
+    elif c2=="O" and c5=="O" and c8=="O" or c2=="X" and c5=="X" and c8=="X":
         return True
     elif c3=="O" and c6=="O" and c9=="O" or c3=="X" and c6=="X" and c9=="X":
         return True

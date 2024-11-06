@@ -81,7 +81,7 @@ def case():                                               #grille avec support d
 
 def victory():
     global c1, c2, c3, c4, c5, c6, c7, c8, c9
-    # Check rows
+    #check lignes
     if (c1 == "O" and c2 == "O" and c3 == "O") or (c1 == "X" and c2 == "X" and c3 == "X"):
         return False
     if (c4 == "O" and c5 == "O" and c6 == "O") or (c4 == "X" and c5 == "X" and c6 == "X"):
@@ -89,7 +89,7 @@ def victory():
     if (c7 == "O" and c8 == "O" and c9 == "O") or (c7 == "X" and c8 == "X" and c9 == "X"):
         return False
     
-    # Check columns
+    #check colones
     if (c1 == "O" and c4 == "O" and c7 == "O") or (c1 == "X" and c4 == "X" and c7 == "X"):
         return False
     if (c2 == "O" and c5 == "O" and c8 == "O") or (c2 == "X" and c5 == "X" and c8 == "X"):
@@ -97,13 +97,13 @@ def victory():
     if (c3 == "O" and c6 == "O" and c9 == "O") or (c3 == "X" and c6 == "X" and c9 == "X"):
         return False
     
-    # Check diagonals
+    #check diago
     if (c1 == "O" and c5 == "O" and c9 == "O") or (c1 == "X" and c5 == "X" and c9 == "X"):
         return False
     if (c3 == "O" and c5 == "O" and c7 == "O") or (c3 == "X" and c5 == "X" and c7 == "X"):
         return False
     
-    # Check if all cells are filled
+    #check égalité
     if c1 != " " and c2 != " " and c3 != " " and c4 != " " and c5 != " " and c6 != " " and c7 != " " and c8 != " " and c9 != " ":
         print("fin de partie, égalité")
         return False

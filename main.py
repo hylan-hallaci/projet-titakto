@@ -1,3 +1,20 @@
+grille =  ["_","_","_","_","_","_","_","_","_"]
+    
+def displaygame(grille):
+    print(grille[0], '|',grille[1],'|',grille[2])
+    print("__"+"__"+"__"+"__"+"__")
+    print(grille[3], '|',grille[4],'|',grille[5])
+    print("__"+"__"+"__"+"__"+"__")
+    print(grille[5], '|',grille[6],'|',grille[7])
+    print("___"+"__"+"__"+"__"+"__")
+displaygame(grille)
+
+def jouer(joueur,grille):
+    print("Le joueur")
+
+
+
+
 import tkinter
 
 root = tkinter.Tk()

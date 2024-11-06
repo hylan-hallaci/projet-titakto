@@ -1,21 +1,78 @@
-c1=0
-c2=0
-c3=0
-c4=0
-c5=0
-c6=0
-c7=0
-c8=0
-c9=0
+c1=1
+c2=2
+c3=3
+c4=4
+c5=5
+c6=6
+c7=7
+c8=8
+c9=9
 
+def turn_o():                                           #change la variable d'une case par la valeur 1 pour les O et a valeur 2 pour les X.
+    CA=input("quelle case voulez vous jouer ?")
+    if CA == 1 and c1 ==0:
+        c1= 1
+    elif CA == 2 and c2==0:
+        c2= 1
+    elif CA== 3 and c3 == 0:
+        c3=1
+    elif CA== 4 and c4 ==0:
+        c4=1
+    elif CA==5 and c5==0:
+        c5=1
+    elif CA==6 and c6==0:
+        c6=1
+    elif CA==7 and c7==0:
+        c7=1
+    elif CA==8 and c8==0:
+        c8=1
+    elif CA==9 and c9==0:
+        c9=1
+    else:
+        print("choisissez une case vide svp")
+        turn_o()
+def turn_x():                                             #pour eviter des erreurs, répétition, KISS
+    CA=input("quelle case voulez vous jouer ?")
+    if CA == 1 and c1 ==0:
+        c1= 2
+    elif CA == 2 and c2==0:
+        c2= 2
+    elif CA== 3 and c3 == 0:
+        c3=2
+    elif CA== 4 and c4 ==0:
+        c4=2
+    elif CA==5 and c5==0:
+        c5=2
+    elif CA==6 and c6==0:
+        c6=2
+    elif CA==7 and c7==0:
+        c7=2
+    elif CA==8 and c8==0:
+        c8=2
+    elif CA==9 and c9==0:
+        c9=2
+    else:
+        print("choisissez une case vide svp")
+        turn_x()
+ 
+def case():
+    long = 1
+    larg = 1
+    n=0
+    grille = [c1,c2,c3,c4,c5,c6,c7,c8,c9]
 
+    print("+" + ("-" * long + "+") * 4)
 
+    for i in range(3):
+        
+        for k in range(3):
+            print(( f"|{grille[n]}|"),end='')
+            n+=1
+        print (end="\n") 
 
-
-
-
-
-
+    print("+" + ("-" * long + "+")*4)
+        
+case()
 
 
 

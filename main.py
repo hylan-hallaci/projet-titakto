@@ -34,6 +34,9 @@ def turn_o():                                           #change la variable d'un
     else:
         print("choisissez une case vide svp")
         turn_o()
+        
+        
+        
 def turn_x():                                             #pour eviter des erreurs, répétition, KISS
     global c1, c2, c3, c4, c5, c6, c7, c8, c9
     CA=int(input("quelle case voulez vous jouer ?"))
@@ -59,6 +62,7 @@ def turn_x():                                             #pour eviter des erreu
         print("choisissez une case vide svp")
         turn_x()
  
+ 
 def case():                                               #grille avec support des variables dans le terminal
     global c1, c2, c3, c4, c5, c6, c7, c8, c9
     long = 1
@@ -78,45 +82,55 @@ def case():                                               #grille avec support d
     print("+" + ("-" * long + "+")*4)
         
 
-
-def victory():
+def victory():                                      #Cnditions de victoire 
     global c1, c2, c3, c4, c5, c6, c7, c8, c9
-    #check lignes
+    
     if (c1 == "O" and c2 == "O" and c3 == "O") or (c1 == "X" and c2 == "X" and c3 == "X"):
+        print("Victoire GG")
         return False
-    if (c4 == "O" and c5 == "O" and c6 == "O") or (c4 == "X" and c5 == "X" and c6 == "X"):
+    elif (c4 == "O" and c5 == "O" and c6 == "O") or (c4 == "X" and c5 == "X" and c6 == "X"):
+        print("Victoire GG")
         return False
-    if (c7 == "O" and c8 == "O" and c9 == "O") or (c7 == "X" and c8 == "X" and c9 == "X"):
-        return False
-    
-    #check colones
-    if (c1 == "O" and c4 == "O" and c7 == "O") or (c1 == "X" and c4 == "X" and c7 == "X"):
-        return False
-    if (c2 == "O" and c5 == "O" and c8 == "O") or (c2 == "X" and c5 == "X" and c8 == "X"):
-        return False
-    if (c3 == "O" and c6 == "O" and c9 == "O") or (c3 == "X" and c6 == "X" and c9 == "X"):
+    elif (c7 == "O" and c8 == "O" and c9 == "O") or (c7 == "X" and c8 == "X" and c9 == "X"):
+        print("Victoire GG")
         return False
     
-    #check diago
-    if (c1 == "O" and c5 == "O" and c9 == "O") or (c1 == "X" and c5 == "X" and c9 == "X"):
+    elif (c1 == "O" and c4 == "O" and c7 == "O") or (c1 == "X" and c4 == "X" and c7 == "X"):
+        print("Victoire GG")
         return False
-    if (c3 == "O" and c5 == "O" and c7 == "O") or (c3 == "X" and c5 == "X" and c7 == "X"):
+    elif (c2 == "O" and c5 == "O" and c8 == "O") or (c2 == "X" and c5 == "X" and c8 == "X"):
+        print("Victoire GG")
+        return False
+    elif (c3 == "O" and c6 == "O" and c9 == "O") or (c3 == "X" and c6 == "X" and c9 == "X"):
+        print("Victoire GG")
         return False
     
-    #check égalité
-    if c1 != " " and c2 != " " and c3 != " " and c4 != " " and c5 != " " and c6 != " " and c7 != " " and c8 != " " and c9 != " ":
+    elif (c1 == "O" and c5 == "O" and c9 == "O") or (c1 == "X" and c5 == "X" and c9 == "X"):
+        print("Victoire GG")
+        return False
+    elif (c3 == "O" and c5 == "O" and c7 == "O") or (c3 == "X" and c5 == "X" and c7 == "X"):
+        print("Victoire GG")
+        return False
+
+    elif c1 != " " and c2 != " " and c3 != " " and c4 != " " and c5 != " " and c6 != " " and c7 != " " and c8 != " " and c9 != " ":
         print("fin de partie, égalité")
         return False
     else:
         print("manche suivante")
         return True
 
-def flow():
+def flow():                                     #avancement
     while victory() is True:
-        case()
-        turn_o()
+        
+        print("Au tour du joueur O")
         victory()
         case()
+        victory()
+        turn_o()
+        victory()       
+        print("Au tour du joueur X") 
+        case()
+        victory()
         turn_x()
         victory()
         

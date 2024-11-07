@@ -9,6 +9,7 @@ c6=" "
 c7=" "
 c8=" "
 c9=" "
+is_ended = True
 
 def turn_o():                                           #change la variable d'une case par la valeur 1 pour les O et a valeur 2 pour les X.
     global c1, c2, c3, c4, c5, c6, c7, c8, c9
@@ -87,50 +88,50 @@ def victory():                                      #Cnditions de victoire
     
     if (c1 == "O" and c2 == "O" and c3 == "O") or (c1 == "X" and c2 == "X" and c3 == "X"):
         print("Victoire GG")
-        return False
+        cle = False
     elif (c4 == "O" and c5 == "O" and c6 == "O") or (c4 == "X" and c5 == "X" and c6 == "X"):
         print("Victoire GG")
-        return False
+        cle = False
     elif (c7 == "O" and c8 == "O" and c9 == "O") or (c7 == "X" and c8 == "X" and c9 == "X"):
         print("Victoire GG")
-        return False
+        cle = False
     
     elif (c1 == "O" and c4 == "O" and c7 == "O") or (c1 == "X" and c4 == "X" and c7 == "X"):
         print("Victoire GG")
-        return False
+        cle = False
     elif (c2 == "O" and c5 == "O" and c8 == "O") or (c2 == "X" and c5 == "X" and c8 == "X"):
         print("Victoire GG")
-        return False
+        cle = False
     elif (c3 == "O" and c6 == "O" and c9 == "O") or (c3 == "X" and c6 == "X" and c9 == "X"):
         print("Victoire GG")
-        return False
+        cle = False
     
     elif (c1 == "O" and c5 == "O" and c9 == "O") or (c1 == "X" and c5 == "X" and c9 == "X"):
         print("Victoire GG")
-        return False
+        cle = False
     elif (c3 == "O" and c5 == "O" and c7 == "O") or (c3 == "X" and c5 == "X" and c7 == "X"):
         print("Victoire GG")
-        return False
+        cle = False
 
     elif c1 != " " and c2 != " " and c3 != " " and c4 != " " and c5 != " " and c6 != " " and c7 != " " and c8 != " " and c9 != " ":
         print("fin de partie, égalité")
-        return False
+        cle = False
     else:
         print("manche suivante")
-        return True
+        cle = False
 
 def flow():                                     #avancement
-    while victory() is True:
+    while cle is True:
         
         print("Au tour du joueur O")
-        victory()
+        
         case()
-        victory()
+        
         turn_o()
         victory()       
         print("Au tour du joueur X") 
         case()
-        victory()
+        
         turn_x()
         victory()
         
@@ -154,6 +155,8 @@ play()
 
 
 
-        
+while is_ended== False:
+    int(input("quelle case voulez vous jouer"))
+            
         
     
